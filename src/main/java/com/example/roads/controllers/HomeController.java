@@ -4,9 +4,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /* Aqui ficara todos os endpoints da aplicação */
-    @RestController()
+    @RestController
     public class HomeController {
-        @GetMapping("sayHello")
+
+        @GetMapping("sayhello")
         public String sayHello(){
             return "Hello World";
         }
