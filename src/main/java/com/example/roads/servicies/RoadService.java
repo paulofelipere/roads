@@ -1,12 +1,23 @@
 package com.example.roads.servicies;
 
+import com.example.roads.entities.Rodovia;
 import com.example.roads.repositories.RodoviaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class RoadService {
 
     @Autowired RodoviaRepository rodoviaRepository;
+
+    public RoadService(){
+
+    }
+    /* Funcao para acessar todas os dados */
+    public List<Rodovia> getRodovias() {
+        return rodoviaRepository.findAll();
+    }
 
 }

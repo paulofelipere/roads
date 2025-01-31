@@ -16,7 +16,7 @@ import jakarta.persistence.*;
     @Column(name= "numSeguimento")
     private int numSeguimento;
 
-    @Column(name= "idRodovia")
+    @Column(name = "idRodovia")
     private int idRodovia;
 
     @Column(name= "tipoRodovia")
@@ -24,6 +24,14 @@ import jakarta.persistence.*;
 
     @Column(name = "numRodovia")
     private int numRodovia;
+
+    public int getIdRodovia() {
+        return idRodovia;
+    }
+
+    public void setIdRodovia(int idRodovia) {
+        this.idRodovia = idRodovia;
+    }
 
     public char getCodigo() {
         return codigo;
@@ -39,14 +47,6 @@ import jakarta.persistence.*;
 
     public void setNumSeguimento(int numSeguimento) {
         this.numSeguimento = numSeguimento;
-    }
-
-    public int getIdRodovia() {
-        return idRodovia;
-    }
-
-    public void setIdRodovia(int idRodovia) {
-        this.idRodovia = idRodovia;
     }
 
     public String getTipoRodovia() {
