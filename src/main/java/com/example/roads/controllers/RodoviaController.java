@@ -10,7 +10,7 @@ import java.util.List;
 
 /* Aqui ficarao todos os endpoints da aplicação */
 @RestController
-public class HomeController {
+public class RodoviaController {
 
     @Autowired
     private RoadService roadService;

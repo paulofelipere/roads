@@ -11,13 +11,10 @@ import jakarta.persistence.*;
     @Id
     @Column(name = "codigo")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private char codigo;
+    private int codigo;
 
     @Column(name= "numSeguimento")
     private int numSeguimento;
-
-    @Column(name = "idRodovia")
-    private int idRodovia;
 
     @Column(name= "tipoRodovia")
     private String tipoRodovia;
@@ -25,15 +22,12 @@ import jakarta.persistence.*;
     @Column(name = "numRodovia")
     private int numRodovia;
 
-    public int getIdRodovia() {
-        return idRodovia;
+
+    public Rodovia() {
+
     }
 
-    public void setIdRodovia(int idRodovia) {
-        this.idRodovia = idRodovia;
-    }
-
-    public char getCodigo() {
+    public int getCodigo() {
         return codigo;
     }
 
