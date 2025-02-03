@@ -11,7 +11,7 @@ import jakarta.persistence.*;
     @Id
     @Column(name = "codigo")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int codigo;
+    private int codigo;;
 
     @Column(name= "numSeguimento")
     private int numSeguimento;
