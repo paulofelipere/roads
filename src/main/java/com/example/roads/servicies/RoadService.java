@@ -20,4 +20,8 @@ public class RoadService {
         return rodoviaRepository.findAll();
     }
 
+    public Rodovia saveRodovia(Rodovia rodovia) {
+        rodoviaRepository.save(rodovia);
+        return rodovia;
+    }
 }
