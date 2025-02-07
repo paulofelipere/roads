@@ -24,12 +24,52 @@ public class CadastroSeguimento {
     @Column(name = "cidade")
     private String cidade;
 
+    public CadastroSeguimento(){
 
+    }
 
+    public int getNumSeguimento() {
+        return numSeguimento;
+    }
 
+    public void setNumSeguimento(int numSeguimento) {
+        this.numSeguimento = numSeguimento;
+    }
 
+    public double getSeguimentoInicial() {
+        return seguimentoInicial;
+    }
 
+    public void setSeguimentoInicial(double seguimentoInicial) {
+        this.seguimentoInicial = seguimentoInicial;
+    }
 
+    public CadastroSeguimento(int numSeguimento) {
+        this.numSeguimento = numSeguimento;
+    }
 
+    public double getSeguimentoFinal() {
+        return seguimentoFinal;
+    }
 
+    public void setSeguimentoFinal(double seguimentoFinal) {
+        this.seguimentoFinal = seguimentoFinal;
+    }
+
+    public double getExtensaoSeguimento() {
+        return extensaoSeguimento;
+    }
+
+    public void setExtensaoSeguimento(double extensaoSeguimento) {
+        this.extensaoSeguimento = extensaoSeguimento;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
 }
+
