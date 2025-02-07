@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 
     public class Rodovia {
 
-    @Id
+    @Id // Primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name= "tipoRodovia")
     private String tipoRodovia;
