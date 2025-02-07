@@ -16,7 +16,6 @@ import jakarta.persistence.*;
     @Column(name = "numRodovia")
     private int numRodovia;
 
-
     public Rodovia() {
 
     }
