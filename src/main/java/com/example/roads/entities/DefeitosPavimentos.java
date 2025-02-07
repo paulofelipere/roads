@@ -12,7 +12,7 @@ public class DefeitosPavimentos {
     @Id
     @Column(name = "codigo")
     private String codigo;
-
+// add chaves externas
     public DefeitosPavimentos(){
 
     }

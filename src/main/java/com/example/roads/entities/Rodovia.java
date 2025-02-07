@@ -10,10 +10,10 @@ import jakarta.persistence.*;
 
     @Id // Primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name= "tipoRodovia")
+    @Column(name= "tiporodovia")
     private String tipoRodovia;
 
-    @Column(name = "numRodovia")
+    @Column(name = "numrodovia")
     private int numRodovia;
 
     public Rodovia() {
