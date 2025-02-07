@@ -2,6 +2,7 @@ package com.example.roads.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class Trincas {
@@ -23,6 +24,8 @@ public class Trincas {
 
     @Column(name = "pt")
     private double pt;
+    @Id
+    private Long id;
 
     public Trincas() {
     }
@@ -74,4 +77,6 @@ public class Trincas {
     public void setPt(double pt) {
         this.pt = pt;
     }
+
+
 }

@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 @Entity
 public class Panelas {
     @Id
-    @Column(name = "codigoPanelas")
+    @Column(name = "codigo")
     private String codigo;
 
     @Column(name = "quantidade")

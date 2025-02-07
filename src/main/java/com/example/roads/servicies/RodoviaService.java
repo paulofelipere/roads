@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class RoadService {
+public class RodoviaService {
 
     @Autowired RodoviaRepository rodoviaRepository;
 
-    public RoadService(){
+    public RodoviaService(){
 
     }
     /* Funcao para acessar todas os dados */
