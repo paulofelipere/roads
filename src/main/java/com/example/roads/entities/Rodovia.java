@@ -34,4 +34,5 @@ import jakarta.persistence.*;
     public void setNumRodovia(int numRodovia) {
         this.numRodovia = numRodovia;
     }
+
 }

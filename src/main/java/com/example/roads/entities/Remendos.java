@@ -19,6 +19,8 @@ public class Remendos {
 
     @Column(name ="resultadoiggeremendos")
     private int resultadoIggeRemendos;
+    @Id
+    private Long id;
 
     public Remendos() {
     }
@@ -56,4 +58,11 @@ public class Remendos {
     }
 
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
 }
