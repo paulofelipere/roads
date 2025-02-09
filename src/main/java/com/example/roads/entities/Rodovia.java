@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "rodovias")
 
 
-    public class Rodovia {
+public class Rodovia {
 
     @Id // Primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY)

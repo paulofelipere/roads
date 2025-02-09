@@ -3,10 +3,7 @@ package com.example.roads.controllers;
 import com.example.roads.entities.Rodovia;
 import com.example.roads.servicies.RodoviaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,5 +26,9 @@ public class RodoviaController {
     @PostMapping("addRodovia")
     public Rodovia saveRodovia(@RequestBody Rodovia rodovia){
         return roadService.saveRodovia(rodovia);
+    }
+    @DeleteMapping("deleteRodovia")
+    public Rodovia deleteRodovia(@RequestBody Rodovia rodovia){
+       return roadService.deleteRodovia(rodovia);
     }
 }

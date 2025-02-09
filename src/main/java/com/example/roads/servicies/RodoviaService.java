@@ -24,4 +24,9 @@ public class RodoviaService {
         rodoviaRepository.save(rodovia);
         return rodovia;
     }
+
+    public Rodovia deleteRodovia(Rodovia rodovia) {
+        rodoviaRepository.delete(rodovia);
+        return rodovia;
+    }
 }
