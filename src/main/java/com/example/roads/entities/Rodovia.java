@@ -10,6 +10,8 @@ import jakarta.persistence.*;
 
     @Id // Primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
     @Column(name= "tiporodovia")
     private String tipoRodovia;
 
@@ -19,6 +21,8 @@ import jakarta.persistence.*;
     public Rodovia() {
 
     }
+
+
     public String getTipoRodovia() {
         return tipoRodovia;
     }
@@ -33,6 +37,14 @@ import jakarta.persistence.*;
 
     public void setNumRodovia(int numRodovia) {
         this.numRodovia = numRodovia;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
 }

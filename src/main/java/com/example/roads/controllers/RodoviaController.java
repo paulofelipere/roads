@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-/* Aqui ficarao todos os endpoints da aplicação */
 @RestController
 public class RodoviaController {
 
@@ -27,9 +26,8 @@ public class RodoviaController {
         return roadService.getRodovias();
     }
 
-    @PostMapping("addTipoRodovia")
-    public Rodovia SaveRodovia(@RequestBody Rodovia rodovia){
+    @PostMapping("addRodovia")
+    public Rodovia saveRodovia(@RequestBody Rodovia rodovia){
         return roadService.saveRodovia(rodovia);
     }
-
 }
