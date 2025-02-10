@@ -1,4 +1,4 @@
-package com.example.roads.servicies;
+package com.example.roads.services;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

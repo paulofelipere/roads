@@ -1,4 +1,4 @@
-package com.example.roads.servicies;
+package com.example.roads.services;
 
 import com.example.roads.entities.Rodovia;
 import com.example.roads.repositories.RodoviaRepository;
