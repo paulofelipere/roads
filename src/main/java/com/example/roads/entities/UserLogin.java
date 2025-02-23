@@ -1,8 +1,10 @@
 package com.example.roads.entities;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
 @Entity
+@Getter
 @Table(name = "user_1")
 public class UserLogin {
     @Id
