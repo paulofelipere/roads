@@ -2,9 +2,12 @@ package com.example.roads.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 
-@Entity
+
 @Getter
+@Entity
+
 @Table(name = "user_1")
 public class UserLogin {
     @Id
@@ -18,24 +21,12 @@ public class UserLogin {
     @Column(name = "password")
     private String password;
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public long getId() {
-        return id;
-    }
-
     public void setId(long id) {
         this.id = id;
     }
 
-    public String getPassword() {
-        return password;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public void setPassword(String password) {
