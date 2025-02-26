@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class UserLoginController {
     @GetMapping("/req/login")
     public String login(){
-        return "login"; // This should match the name of your HTML template
+        return "login";
     }
 
     @GetMapping("/req/signup")
