@@ -1,6 +1,7 @@
 package com.example.roads.security;
 
 import com.example.roads.services.UserLoginService;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,23 +17,21 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
+@AllArgsConstructor
+
 public class SecurityConfig {
     @Autowired
-    private final UserLoginService appUserService;
-
-    public SecurityConfig(UserLoginService appUserService) {
-        this.appUserService = appUserService;
-    }
+    private final UserLoginService userLoginService;
 
     @Bean
     public UserDetailsService userDetailsService() {
-        return appUserService;
+        return userLoginService;
     }
 
     @Bean
-    public AuthenticationProvider authenticationProvider(){
+    public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-        provider.setUserDetailsService(appUserService);
+        provider.setUserDetailsService(userLoginService);
         provider.setPasswordEncoder(passwordEncoder());
         return provider;
     }
@@ -41,18 +40,18 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
-
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
         return httpSecurity
                 .csrf(AbstractHttpConfigurer::disable)
-                .formLogin(form -> form
-                        .loginPage("/req/login").permitAll() // Certifique-se de que a URL de login está correta
-                )
+                .formLogin(httpForm -> {
+                    httpForm.loginPage("/login").permitAll();
+                    httpForm.defaultSuccessUrl("/index");
+                })
                 .authorizeHttpRequests(registry -> {
-                    registry.requestMatchers("/req/signup", "/css/**", "/js/**", "/templates/**").permitAll();
+                    registry.requestMatchers("/signup", "/css/**", "/js/**").permitAll();
                     registry.anyRequest().authenticated();
+
                 })
                 .build();
     }
