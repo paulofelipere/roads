@@ -21,11 +21,15 @@ public class CadastroSeguimento {
     @Column(name = "extensaoSeguimento")
     private double extensaoSeguimento;
 
+
     @Column(name = "cidade")
     private String cidade;
 
     public CadastroSeguimento(){
 
+    }
+    public double extensaoSeguimento(double seguimentoFinal, double seguimentoInicial){
+        return seguimentoFinal - seguimentoInicial;
     }
 
     public int getNumSeguimento() {

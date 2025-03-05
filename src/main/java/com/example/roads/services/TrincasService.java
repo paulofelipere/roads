@@ -1,12 +1,13 @@
 package com.example.roads.services;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 
-@Entity
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
 public class TrincasService {
 
-    @Id
-    private long id;
+  @Autowired
+    public  Tr
 
 }
