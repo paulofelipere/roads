@@ -29,6 +29,15 @@ public class CadastroSeguimentoService {
         return cadastroSeguimento;
     }
 
+    public CadastroSeguimento addCidade(CadastroSeguimento cadastroSeguimento){
+        cadastroSeguimentoRepository.save(cadastroSeguimento);
+        return cadastroSeguimento;
+    }
+
+    public CadastroSeguimento deleteCidade(CadastroSeguimento cadastroSeguimento){
+        cadastroSeguimentoRepository.delete(cadastroSeguimento);
+        return cadastroSeguimento;
+    }
 
 
 }
