@@ -28,6 +28,8 @@ public class CadastroSeguimento {
     public CadastroSeguimento(){
 
     }
+
+
     public double extensaoSeguimento(double seguimentoFinal, double seguimentoInicial){
         return seguimentoFinal - seguimentoInicial;
     }
