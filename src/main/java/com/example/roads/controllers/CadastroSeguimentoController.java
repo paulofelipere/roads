@@ -40,5 +40,6 @@ public class CadastroSeguimentoController {
     @PostMapping("updateCadastroSeguimento")
     public CadastroSeguimento updateCadastroSeguimento(@RequestBody CadastroSeguimento cadastroSeguimento) {
         return cadastroSeguimentoService.updateCadastroSeguimento(cadastroSeguimento);
+
     }
 }

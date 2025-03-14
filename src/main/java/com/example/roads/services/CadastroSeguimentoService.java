@@ -36,6 +36,7 @@ public class CadastroSeguimentoService {
     public CadastroSeguimento updateCadastroSeguimento(CadastroSeguimento cadastroSeguimento) {
         cadastroSeguimentoRepository.save(cadastroSeguimento);
         return cadastroSeguimento;
+
     }
 
 }
