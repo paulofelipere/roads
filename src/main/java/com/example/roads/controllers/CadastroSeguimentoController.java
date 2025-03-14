@@ -32,7 +32,6 @@ public class CadastroSeguimentoController {
         public CadastroSeguimento deleteSeguimento(@RequestBody CadastroSeguimento seguimento) {
            return cadastroSeguimentoService.deleteCadastroSeguimento(seguimento);
     }
-
     @PostMapping("updateSeguimento")
         public CadastroSeguimento updateSeguimento(@RequestBody CadastroSeguimento seguimento) {
            return cadastroSeguimentoService.updateCadastroSeguimento(seguimento);
