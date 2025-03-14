@@ -29,13 +29,6 @@ public class CadastroSeguimentoService {
         return cadastroSeguimento;
     }
 
-    public CadastroSeguimento findCadastroSeguimentoById(Long id) {
-        return cadastroSeguimentoRepository.findById(id).get();
-    }
-    public CadastroSeguimento updateCadastroSeguimento(CadastroSeguimento cadastroSeguimento) {
-        cadastroSeguimentoRepository.save(cadastroSeguimento);
-        return cadastroSeguimento;
-    }
 
 
 }
