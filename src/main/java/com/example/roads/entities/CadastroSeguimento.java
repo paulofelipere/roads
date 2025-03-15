@@ -1,9 +1,6 @@
 package com.example.roads.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "cadastroSeguimento")
@@ -21,9 +18,20 @@ public class CadastroSeguimento {
     @Column(name = "extensaoSeguimento")
     private double extensaoSeguimento;
 
-
     @Column(name = "cidade")
     private String cidade;
+
+    @ManyToOne
+    @JoinColumn(name = "rodovias") // ver isso
+    private Rodovia rodovia;
+
+    public Rodovia getRodovia() {
+        return rodovia;
+    }
+
+    public void setRodovia(Rodovia rodovia) {
+        this.rodovia = rodovia;
+    }
 
     public CadastroSeguimento(){
 

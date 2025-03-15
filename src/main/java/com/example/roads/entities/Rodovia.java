@@ -1,11 +1,10 @@
 package com.example.roads.entities;
 
 import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "rodovias")
-
-
 public class Rodovia {
 
     @Id // Primary key
@@ -15,13 +14,14 @@ public class Rodovia {
     @Column(name= "tiporodovia")
     private String tipoRodovia;
 
+    @OneToMany(mappedBy = "rodovia", cascade = CascadeType.ALL)
+    private List<CadastroSeguimento> seguimentos;
+
     @Column(name = "numrodovia")
     private int numRodovia;
 
     public Rodovia() {
-
     }
-
 
     public String getTipoRodovia() {
         return tipoRodovia;
@@ -47,4 +47,11 @@ public class Rodovia {
         this.id = id;
     }
 
+    public List<CadastroSeguimento> getSeguimentos() {
+        return seguimentos;
+    }
+
+    public void setSeguimentos(List<CadastroSeguimento> seguimentos) {
+        this.seguimentos = seguimentos;
+    }
 }
