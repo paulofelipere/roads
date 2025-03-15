@@ -77,5 +77,9 @@ public class CadastroSeguimento {
     public void setCidade(String cidade) {
         this.cidade = cidade;
     }
+
+    public void calcularExtensãoSeguimento(){
+        this.extensaoSeguimento = this.seguimentoFinal - this.seguimentoInicial;
+    }
 }
 
