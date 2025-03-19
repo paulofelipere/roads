@@ -1,4 +1,4 @@
-package com.example.roads.controllers;
+/*package com.example.roads.controllers;
 
 import com.example.roads.entities.UserLogin;
 import com.example.roads.repositories.LoginRepository;
@@ -23,4 +23,4 @@ public class RegistrationController {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return loginRepository.save(user);
     }
-}
+}*/

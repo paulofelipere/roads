@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+/*document.addEventListener('DOMContentLoaded', function () {
     const signupForm = document.querySelector('section');
     signupForm.style.opacity = 0;
   
@@ -24,5 +24,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1000);
       }
     });
-  });
+  });*/
   
