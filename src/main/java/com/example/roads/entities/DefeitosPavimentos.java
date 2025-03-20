@@ -1,9 +1,6 @@
 package com.example.roads.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "defeitosPavimentos")
@@ -13,6 +10,17 @@ public class DefeitosPavimentos {
     @Column(name = "codigo")
     private String codigo;
 // add chaves externas
+    @ManyToMany
+    @JoinColumn(name = "cadastroSeguimento")
+    private CadastroSeguimento cadastroSeguimento;
+
+    @Column(name = "tipodefeito")
+    private String tipoDefeito;
+
+    @Column(name ="numseguimento")
+    private String numSeguimento;
+
+
     public DefeitosPavimentos(){
 
     }
