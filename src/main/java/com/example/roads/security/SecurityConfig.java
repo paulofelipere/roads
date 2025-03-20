@@ -1,4 +1,4 @@
-package com.example.roads.security;
+/*package com.example.roads.security;
 
 import com.example.roads.services.UserLoginService;
 import lombok.AllArgsConstructor;
@@ -15,8 +15,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-//@Configuration
-//@EnableWebSecurity
+@Configuration
+@EnableWebSecurity
 @AllArgsConstructor
 
 public class SecurityConfig {
@@ -55,4 +55,4 @@ public class SecurityConfig {
                 })
                 .build();
     }
-}
+}*/

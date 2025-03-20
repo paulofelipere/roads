@@ -1,4 +1,4 @@
-package com.example.roads.entities;
+/*package com.example.roads.entities;
 
 import jakarta.persistence.*;
 
@@ -55,4 +55,4 @@ public class UserLogin {
     public void setPassword(String password) {
         this.password = password;
     }
-}
+}*/

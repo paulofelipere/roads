@@ -1,4 +1,4 @@
-package com.example.roads.repositories;
+/*package com.example.roads.repositories;
 
 import java.util.Optional;
 
@@ -11,4 +11,4 @@ public interface LoginRepository extends JpaRepository<UserLogin, Long>{
 
     Optional<UserLogin> findByUsername(String username);
 
-}
+}*/
