@@ -13,7 +13,7 @@ public class DefeitosPavimentos {
 
     @ManyToMany
     @JoinTable(
-            name = "defeitosseguimentos",
+            name = "defeitosseguimentos",  // tabela de junção
             joinColumns = @JoinColumn(name = "codigo"),
             inverseJoinColumns = @JoinColumn(name = "numSeguimento")
     )
