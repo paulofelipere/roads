@@ -19,6 +19,28 @@ public class Panelas {
     public Panelas() {
     }
 
+    public Panelas(String codigo, int quantidade, int gravidade) {
+        this.codigo = codigo;
+        this.quantidade = quantidade;
+        this.gravidade = gravidade;
+    }
+
+    public void frequenciaPanelas() {
+        if (quantidade >= 5) {
+            codigo = "A";
+            gravidade = 3;
+            System.out.println("Frequencia Alta!");
+        } else if (quantidade > 2 && quantidade < 5) {
+            codigo = "M";
+            gravidade = 2;
+            System.out.println("Frequencia Média!");
+        } else if (quantidade <= 2) {
+            codigo = "B";
+            gravidade = 1;
+            System.out.println("Frequencia baixa");
+        }
+    }
+
     public String getCodigo() {
         return codigo;
     }

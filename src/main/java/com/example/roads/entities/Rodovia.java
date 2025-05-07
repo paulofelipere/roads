@@ -1,6 +1,8 @@
 package com.example.roads.entities;
 
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -20,7 +22,24 @@ public class Rodovia {
     @Column(name = "numrodovia")
     private int numRodovia;
 
-    public Rodovia() {
+    @Column(name = "vmd")
+    private int vmd;
+
+
+    public Rodovia(long id) {
+        this.id = id;
+        this.tipoRodovia = "";
+        this.seguimentos = new ArrayList<CadastroSeguimento>();
+        this.numRodovia = 0;
+        this.vmd = 0;
+    }
+
+    public int getVmd() {
+        return vmd;
+    }
+
+    public void setVmd(int vmd) {
+        this.vmd = vmd;
     }
 
     public String getTipoRodovia() {

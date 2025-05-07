@@ -26,6 +26,10 @@ public class Remendos {
     private List<CadastroSeguimento> seguimentos;
 
     public Remendos() {
+        this.porcentagemKm = 0;
+        this.quantidade = 0;
+        this.gravidade = 0;
+        this.resultadoIggeRemendos = 0;
     }
 
     public double getPorcentagemKm() {

@@ -45,6 +45,14 @@ public class Deformacoes {
 
 
     public Deformacoes(){
+        this.quantidade = 0;
+        this.tipo = "";
+        this.codigo = "";
+        this.porcentagem = 0;
+        this.gravidade = 0;
+        this.poap = 0;
+        this.foap = 0;
+        this.igge = 0;
 
     }
 

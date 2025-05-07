@@ -30,6 +30,12 @@ public class Trincas {
     private List<CadastroSeguimento> seguimentos;
 
     public Trincas() {
+        this.quantidadeTrincas = 0;
+        this.tipoTrinca = "";
+        this.porcentagemKM = 0;
+        this.gravidadeTrincas = 0;
+        this.ft = 0;
+        this.pt = 0;
     }
 
     public int getQuantidadeTrincas() {

@@ -20,6 +20,7 @@ public class CadastroSeguimento {
     @Column(name = "extensaoSeguimento")
     private double extensaoSeguimento;
 
+
     @Column(name = "cidade")
     private String cidade;
 
@@ -42,8 +43,8 @@ public class CadastroSeguimento {
     @JoinColumn(name = "deformacoes")
     private Deformacoes deformacoes;
 
+    public CadastroSeguimento() {
 
-    public CadastroSeguimento(){
 
     }
 

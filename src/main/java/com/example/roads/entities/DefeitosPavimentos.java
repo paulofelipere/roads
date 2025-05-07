@@ -31,6 +31,11 @@ public class DefeitosPavimentos {
 
 
     public DefeitosPavimentos() {
+        this.codigo = "";
+        this.cadastroSeguimento = null;
+        this.tipoDefeito = "";
+        this.numSeguimento = "";
+
     }
 
     public Rodovia getRodovia() {
