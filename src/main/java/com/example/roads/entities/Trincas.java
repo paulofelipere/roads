@@ -1,12 +1,10 @@
 package com.example.roads.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 public class Trincas {
-    // add as chaves externas
     @Column(name = "quantidadetrincas")
     private int quantidadeTrincas;
 
@@ -24,8 +22,12 @@ public class Trincas {
 
     @Column(name = "pt")
     private double pt;
+
     @Id
     private Long id;
+
+    @OneToMany(mappedBy = "trincas", cascade = CascadeType.ALL)
+    private List<CadastroSeguimento> seguimentos;
 
     public Trincas() {
     }
@@ -78,5 +80,11 @@ public class Trincas {
         this.pt = pt;
     }
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 }

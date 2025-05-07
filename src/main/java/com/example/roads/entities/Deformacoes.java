@@ -4,6 +4,10 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.CascadeType;
+import java.util.List;
+
 // fazer importação
 @Entity
 @Table(name = "deformacoes")
@@ -33,6 +37,12 @@ public class Deformacoes {
 
     @Column(name = "igge")
     private double igge;
+
+    @OneToMany(mappedBy = "deformacoes", cascade = CascadeType.ALL)
+    private List<CadastroSeguimento> seguimentos;
+
+
+
 
     public Deformacoes(){
 

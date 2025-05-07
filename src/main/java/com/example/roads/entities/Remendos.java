@@ -1,8 +1,8 @@
 package com.example.roads.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import jakarta.persistence.CascadeType;
+import java.util.List;
 
 @Entity
 public class Remendos {
@@ -21,6 +21,9 @@ public class Remendos {
     private int resultadoIggeRemendos;
     @Id
     private Long id;
+
+    @OneToMany(mappedBy = "remendos", cascade = CascadeType.ALL)
+    private List<CadastroSeguimento> seguimentos;
 
     public Remendos() {
     }

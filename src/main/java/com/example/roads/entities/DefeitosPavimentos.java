@@ -25,7 +25,20 @@ public class DefeitosPavimentos {
     @Column(name = "numseguimento")
     private String numSeguimento;
 
+    @ManyToOne
+    @JoinColumn(name ="rodovia")
+    private Rodovia rodovia;
+
+
     public DefeitosPavimentos() {
+    }
+
+    public Rodovia getRodovia() {
+        return rodovia;
+    }
+
+    public void setRodovia(Rodovia rodovia) {
+        this.rodovia = rodovia;
     }
 
     public String getCodigo() {
