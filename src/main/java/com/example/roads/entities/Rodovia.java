@@ -25,14 +25,13 @@ public class Rodovia {
     @Column(name = "vmd")
     private int vmd;
 
-
-    public Rodovia(long id) {
-        this.id = id;
+    public Rodovia() {
         this.tipoRodovia = "";
         this.seguimentos = new ArrayList<CadastroSeguimento>();
         this.numRodovia = 0;
         this.vmd = 0;
     }
+
 
     public int getVmd() {
         return vmd;

@@ -25,7 +25,7 @@ public class Panelas {
         this.gravidade = gravidade;
     }
 
-    public void frequenciaPanelas() {
+   /*  public void frequenciaPanelas() {
         if (quantidade >= 5) {
             codigo = "A";
             gravidade = 3;
@@ -39,7 +39,7 @@ public class Panelas {
             gravidade = 1;
             System.out.println("Frequencia baixa");
         }
-    }
+    }*/
 
     public String getCodigo() {
         return codigo;

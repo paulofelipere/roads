@@ -4,43 +4,34 @@ import jakarta.persistence.*;
 
 import java.util.Date;
 
+@SuppressWarnings("unused")
 @Entity
-@Table(name = "cadastroSeguimento")
 public class CadastroSeguimento {
     @Id // Primary key
-    @Column(name = "numSeguimento")
     private int numSeguimento;
 
-    @Column(name ="seguimentoInicial")
     private double seguimentoInicial;
 
-    @Column(name = "seguimentoFinal")
     private double seguimentoFinal;
 
-    @Column(name = "extensaoSeguimento")
     private double extensaoSeguimento;
 
 
-    @Column(name = "cidade")
     private String cidade;
 
-    @Column(name = "datacadastro")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date dataCadastro;
 
     @ManyToOne
-    @JoinColumn(name = "rodovia") // ver isso
     private Rodovia rodovia;
 
     @ManyToOne
-    @JoinColumn(name = "remendos")
     private Remendos remendos;
 
     @ManyToOne
-    @JoinColumn(name = "trincas")
     private Trincas trincas;
 
     @ManyToOne
-    @JoinColumn(name = "deformacoes")
     private Deformacoes deformacoes;
 
     public CadastroSeguimento() {

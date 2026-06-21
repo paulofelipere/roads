@@ -7,7 +7,10 @@ import java.util.List;
 @Entity
 public class Remendos {
 //add chaves externas
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
     @Column(name = "porcentagemkm")
     private double porcentagemKm;
 
@@ -19,8 +22,6 @@ public class Remendos {
 
     @Column(name ="resultadoiggeremendos")
     private int resultadoIggeRemendos;
-    @Id
-    private Long id;
 
     @OneToMany(mappedBy = "remendos", cascade = CascadeType.ALL)
     private List<CadastroSeguimento> seguimentos;
