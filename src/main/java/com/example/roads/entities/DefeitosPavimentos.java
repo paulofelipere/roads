@@ -3,30 +3,24 @@ package com.example.roads.entities;
 import jakarta.persistence.*;
 import java.util.List;
 
+@SuppressWarnings("unused")
 @Entity
-@Table(name = "defeitosPavimentos")
 public class DefeitosPavimentos {
 
     @Id
-    @Column(name = "codigo")
     private String codigo;
 
     @ManyToMany
     @JoinTable(
-            name = "defeitosseguimentos",  // tabela de junção
-            joinColumns = @JoinColumn(name = "codigo"),
-            inverseJoinColumns = @JoinColumn(name = "numSeguimento")
+            name = "defeitosseguimentos"  // tabela de junção
     )
     private List<CadastroSeguimento> cadastroSeguimento;
 
-    @Column(name = "tipodefeito")
     private String tipoDefeito;
 
-    @Column(name = "numseguimento")
     private String numSeguimento;
 
     @ManyToOne
-    @JoinColumn(name ="rodovia")
     private Rodovia rodovia;
 
 
