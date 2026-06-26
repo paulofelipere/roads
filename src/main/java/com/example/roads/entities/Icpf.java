@@ -1,11 +1,8 @@
 package com.example.roads.entities;
-import com.example.roads.entities.Panelas;
-import com.example.roads.entities.Deformacoes;
-import com.example.roads.entities.Remendos;
-import com.example.roads.entities.Trincas;
-import com.example.roads.entities.CadastroSeguimento;
 import jakarta.persistence.*;
 
+@Entity
+@Table(name = "icpf")
 public class Icpf {
 
     @Id
