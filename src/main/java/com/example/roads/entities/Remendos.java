@@ -1,12 +1,11 @@
 package com.example.roads.entities;
 
 import jakarta.persistence.*;
-import jakarta.persistence.CascadeType;
-import java.util.List;
 
 @Entity
+@Table(name = "remendos")
 public class Remendos {
-//add chaves externas
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,8 +22,9 @@ public class Remendos {
     @Column(name ="resultadoiggeremendos")
     private int resultadoIggeRemendos;
 
-    @OneToMany(mappedBy = "remendos", cascade = CascadeType.ALL)
-    private List<CadastroSeguimento> seguimentos;
+    @ManyToOne
+    @JoinColumn(name = "seguimento_id")
+    private CadastroSeguimento seguimento;
 
     public Remendos() {
         this.porcentagemKm = 0;
@@ -65,6 +65,13 @@ public class Remendos {
         this.resultadoIggeRemendos = resultadoIggeRemendos;
     }
 
+    public CadastroSeguimento getSeguimento() {
+        return seguimento;
+    }
+
+    public void setSeguimento(CadastroSeguimento seguimento) {
+        this.seguimento = seguimento;
+    }
 
     public void setId(Long id) {
         this.id = id;

@@ -1,18 +1,23 @@
 package com.example.roads.entities;
 
 import jakarta.persistence.*;
-import java.util.List;
 
 @Entity
+@Table(name = "trincas")
 public class Trincas {
-    @Column(name = "quantidadetrincas")
-    private int quantidadeTrincas;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id; // ID seguro gerado pelo banco
 
     @Column(name = "tipotrinca")
     private String tipoTrinca;
 
+    @Column(name = "quantidadetrincas")
+    private int quantidadeTrincas;
+
     @Column(name = "porcentagemkm")
-    private double porcentagemKM;
+    private double porcentagemKm;
 
     @Column(name = "gravidadetrincas")
     private int gravidadeTrincas;
@@ -23,74 +28,28 @@ public class Trincas {
     @Column(name = "pt")
     private double pt;
 
-    @Id
-    private Long id;
-
-    @OneToMany(mappedBy = "trincas", cascade = CascadeType.ALL)
-    private List<CadastroSeguimento> seguimentos;
+    @ManyToOne
+    @JoinColumn(name = "seguimento_id")
+    private CadastroSeguimento seguimento;
 
     public Trincas() {
-        this.quantidadeTrincas = 0;
-        this.tipoTrinca = "";
-        this.porcentagemKM = 0;
-        this.gravidadeTrincas = 0;
-        this.ft = 0;
-        this.pt = 0;
     }
 
-    public int getQuantidadeTrincas() {
-        return quantidadeTrincas;
-    }
-
-    public void setQuantidadeTrincas(int quantidadeTrincas) {
-        this.quantidadeTrincas = quantidadeTrincas;
-    }
-
-    public String getTipoTrinca() {
-        return tipoTrinca;
-    }
-
-    public void setTipoTrinca(String tipoTrinca) {
-        this.tipoTrinca = tipoTrinca;
-    }
-
-    public double getPorcentagemKM() {
-        return porcentagemKM;
-    }
-
-    public void setPorcentagemKM(double porcentagemKM) {
-        this.porcentagemKM = porcentagemKM;
-    }
-
-    public int getGravidadeTrincas() {
-        return gravidadeTrincas;
-    }
-
-    public void setGravidadeTrincas(int gravidadeTrincas) {
-        this.gravidadeTrincas = gravidadeTrincas;
-    }
-
-    public double getFt() {
-        return ft;
-    }
-
-    public void setFt(double ft) {
-        this.ft = ft;
-    }
-
-    public double getPt() {
-        return pt;
-    }
-
-    public void setPt(double pt) {
-        this.pt = pt;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    // --- Getters e Setters ---
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    public String getTipoTrinca() { return tipoTrinca; }
+    public void setTipoTrinca(String tipoTrinca) { this.tipoTrinca = tipoTrinca; }
+    public int getQuantidadeTrincas() { return quantidadeTrincas; }
+    public void setQuantidadeTrincas(int quantidadeTrincas) { this.quantidadeTrincas = quantidadeTrincas; }
+    public double getPorcentagemKm() { return porcentagemKm; }
+    public void setPorcentagemKm(double porcentagemKm) { this.porcentagemKm = porcentagemKm; }
+    public int getGravidadeTrincas() { return gravidadeTrincas; }
+    public void setGravidadeTrincas(int gravidadeTrincas) { this.gravidadeTrincas = gravidadeTrincas; }
+    public double getFt() { return ft; }
+    public void setFt(double ft) { this.ft = ft; }
+    public double getPt() { return pt; }
+    public void setPt(double pt) { this.pt = pt; }
+    public CadastroSeguimento getSeguimento() { return seguimento; }
+    public void setSeguimento(CadastroSeguimento seguimento) { this.seguimento = seguimento; }
 }

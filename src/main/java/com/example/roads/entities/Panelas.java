@@ -1,67 +1,40 @@
 package com.example.roads.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "panelas")
 public class Panelas {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id; // A chave não é mais o "codigo", e sim este ID
+
     @Column(name = "codigo")
     private String codigo;
-
-    @Column(name = "quantidade")
-    private int quantidade;
 
     @Column(name = "gravidade")
     private int gravidade;
 
+    @Column(name = "quantidade")
+    private int quantidade;
+
+    @ManyToOne
+    @JoinColumn(name = "seguimento_id") // Aponta para o ID do CadastroSeguimento
+    private CadastroSeguimento seguimento;
+
     public Panelas() {
     }
 
-    public Panelas(String codigo, int quantidade, int gravidade) {
-        this.codigo = codigo;
-        this.quantidade = quantidade;
-        this.gravidade = gravidade;
-    }
-
-   /*  public void frequenciaPanelas() {
-        if (quantidade >= 5) {
-            codigo = "A";
-            gravidade = 3;
-            System.out.println("Frequencia Alta!");
-        } else if (quantidade > 2 && quantidade < 5) {
-            codigo = "M";
-            gravidade = 2;
-            System.out.println("Frequencia Média!");
-        } else if (quantidade <= 2) {
-            codigo = "B";
-            gravidade = 1;
-            System.out.println("Frequencia baixa");
-        }
-    }*/
-
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
-
-    public int getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
-
-    public int getGravidade() {
-        return gravidade;
-    }
-
-    public void setGravidade(int gravidade) {
-        this.gravidade = gravidade;
-    }
+    // --- Getters e Setters ---
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    public String getCodigo() { return codigo; }
+    public void setCodigo(String codigo) { this.codigo = codigo; }
+    public int getGravidade() { return gravidade; }
+    public void setGravidade(int gravidade) { this.gravidade = gravidade; }
+    public int getQuantidade() { return quantidade; }
+    public void setQuantidade(int quantidade) { this.quantidade = quantidade; }
+    public CadastroSeguimento getSeguimento() { return seguimento; }
+    public void setSeguimento(CadastroSeguimento seguimento) { this.seguimento = seguimento; }
 }
