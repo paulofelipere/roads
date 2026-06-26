@@ -10,7 +10,7 @@ public class Igge {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "valorIgge")
+    @Column(name = "valor_igge")
     private double valorIgge;
 
     @Column(name = "conceito")

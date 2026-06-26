@@ -9,7 +9,7 @@ public class Icpf {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "valorIcpf")
+    @Column(name = "valor_icpf")
     private double valorIcpf;
 
     @Column(name = "conceito")
