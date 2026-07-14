@@ -13,6 +13,9 @@ public class Trincas {
     @Column(name = "tipotrinca")
     private String tipoTrinca;
 
+    @Column(name = "codigoTrinca")
+    private String codigoTrinca;
+
     @Column(name = "quantidadetrincas")
     private int quantidadeTrincas;
 
@@ -33,6 +36,14 @@ public class Trincas {
     private CadastroSeguimento seguimento;
 
     public Trincas() {
+    }
+
+    public String getCodigoTrinca() {
+        return codigoTrinca;
+    }
+
+    public void setCodigoTrinca(String codigoTrinca) {
+        this.codigoTrinca = codigoTrinca;
     }
 
     // --- Getters e Setters ---
