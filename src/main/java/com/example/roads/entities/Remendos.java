@@ -9,7 +9,10 @@ public class Remendos {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
+    @Column(name = "codigo_remendos")
+    private String codigoRemendos;
+
     @Column(name = "porcentagemkm")
     private double porcentagemKm;
 
@@ -31,6 +34,14 @@ public class Remendos {
         this.quantidade = 0;
         this.gravidade = 0;
         this.resultadoIggeRemendos = 0;
+    }
+
+    public String getCodigoRemendos() {
+        return codigoRemendos;
+    }
+
+    public void setCodigoRemendos(String codigoRemendos) {
+        this.codigoRemendos = codigoRemendos;
     }
 
     public double getPorcentagemKm() {

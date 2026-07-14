@@ -45,16 +45,30 @@ public class PanelasService {
         int quantidadeKm = panelas.getQuantidade();
         if (quantidadeKm >= 5) {
             panelas.setCodigo("A");
-            panelas.setGravidade(3);
+           /* panelas.setGravidade(3);*/
             System.out.println("Frequencia Alta!");
         } else if (quantidadeKm > 2 && quantidadeKm < 5) {
             panelas.setCodigo("M");
-            panelas.setGravidade(2);
+            /*panelas.setGravidade(2);*/
             System.out.println("Frequencia Média!");
         } else {
             panelas.setCodigo("B");
-            panelas.setGravidade(1);
+           /* panelas.setGravidade(1);*/
 
+            System.out.println("Frequencia baixa");
+        }
+    }
+
+    public void fatorFpr(Panelas panelas) {
+        int quantidadeKm = panelas.getQuantidade();
+        if (quantidadeKm >= 5) {
+            panelas.setGravidade(3);
+            System.out.println("Frequencia Alta!");
+        } else if (quantidadeKm > 2 && quantidadeKm < 5) {
+            panelas.setGravidade(2);
+            System.out.println("Frequencia Média!");
+        } else {
+            panelas.setGravidade(1);
             System.out.println("Frequencia baixa");
         }
     }
