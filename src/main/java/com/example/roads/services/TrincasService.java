@@ -1,6 +1,5 @@
 package com.example.roads.services;
 
-
 import com.example.roads.entities.Trincas;
 import com.example.roads.repositories.TrincasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,41 +9,68 @@ import java.util.List;
 
 @Service
 public class TrincasService {
-    @Autowired TrincasRepository trincasRepository;
+    @Autowired
+    TrincasRepository trincasRepository;
 
-    public TrincasService(){
+    public TrincasService() {
     }
 
-    public List<Trincas> getTrincas(){return trincasRepository.findAll();}
+    public List<Trincas> getTrincas() {
+        return trincasRepository.findAll();
+    }
 
-    public Trincas saveTrincas(Trincas trincas){
-        frequenciaTrincas(trincas);
+    public Trincas saveTrincas(Trincas trincas) {
+        calculoTrincas(trincas);
         trincasRepository.save(trincas);
         return trincas;
     }
 
-    public Trincas findTrincasById(Long id){
-        return trincasRepository.findById(id).get();}
+    public Trincas findTrincasById(Long id) {
+        return trincasRepository.findById(id).get();
+    }
 
-    public Trincas updateTrincas(Trincas trincas){
-        frequenciaTrincas(trincas);
+    public Trincas updateTrincas(Trincas trincas) {
+        calculoTrincas(trincas);
         trincasRepository.save(trincas);
         return trincas;
     }
-    public void frequenciaTrincas(Trincas trincas) {
-        double quantidadeKm = trincas.getQuantidadeTrincas();
-        if (quantidadeKm >= 0.5) {
+
+    public Trincas saveFTFoapTrincas(Trincas trincas) {
+        calculoTrincas(trincas);
+        trincasRepository.save(trincas);
+        return trincas;
+    }
+
+    public void calculoTrincas(Trincas trincas) {
+        int quantidade = trincas.getQuantidadeTrincas();
+
+        if (quantidade >= 5) {
             trincas.setCodigoTrinca("A");
-            /* panelas.setGravidade(3);*/
-            System.out.println("Frequencia Alta!");
-        } else if (quantidadeKm > 0.2 && quantidadeKm < 0.5) {
+            trincas.setGravidadeTrincas(3);
+        } else if (quantidade > 2 && quantidade < 5) {
             trincas.setCodigoTrinca("M");
-            /*panelas.setGravidade(2);*/
-            System.out.println("Frequencia Média!");
+            trincas.setGravidadeTrincas(2);
         } else {
             trincas.setCodigoTrinca("B");
-            System.out.println("Frequencia baixa");
+            trincas.setGravidadeTrincas(1);
         }
 
+        String codigo = trincas.getCodigoTrinca();
+        if ("A".equals(codigo)) {
+            trincas.setFt(3);
+        } else if ("M".equals(codigo)) {
+            trincas.setFt(2);
+        } else {
+            trincas.setFt(1);
+        }
+
+        int gravidade = trincas.getGravidadeTrincas();
+        if (gravidade == 3) {
+            trincas.setPt(0.65);
+        } else if (gravidade == 2) {
+            trincas.setPt(0.45);
+        } else {
+            trincas.setPt(0.30);
+        }
     }
 }
