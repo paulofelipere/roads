@@ -31,8 +31,6 @@ public class Trincas {
     @Column(name = "pt")
     private double pt;
 
-    @Column(name = "ppr")
-    private double ppr;
 
     @ManyToOne
     @JoinColumn(name = "seguimento_id")
@@ -67,11 +65,6 @@ public class Trincas {
     public CadastroSeguimento getSeguimento() { return seguimento; }
     public void setSeguimento(CadastroSeguimento seguimento) { this.seguimento = seguimento; }
 
-    public double getPpr() {
-        return ppr;
-    }
 
-    public void setPpr(double ppr) {
-        this.ppr = ppr;
-    }
+
 }
