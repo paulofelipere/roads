@@ -35,11 +35,6 @@ public class TrincasService {
         return trincas;
     }
 
-    public Trincas saveFTFoapTrincas(Trincas trincas) {
-        calculoTrincas(trincas);
-        trincasRepository.save(trincas);
-        return trincas;
-    }
 
     public void tipoTrincas(Trincas trincas) {} // função para adcionar o tipo da trinca
 
@@ -57,14 +52,6 @@ public class TrincasService {
             trincas.setGravidadeTrincas(1);
         }
 
-        String codigo = trincas.getCodigoTrinca();
-        if ("A".equals(codigo)) {
-            trincas.setFt(3);
-        } else if ("M".equals(codigo)) {
-            trincas.setFt(2);
-        } else {
-            trincas.setFt(1);
-        }
 
         int gravidade = trincas.getGravidadeTrincas();
         if (gravidade == 3) {
