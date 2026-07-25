@@ -73,5 +73,14 @@ public class PanelasService {
         }
     }
 
-   
+   public void pesoPpr(Panelas panelas) {
+        int gravidade =  panelas.getGravidade();
+       if (gravidade == 3) {
+           panelas.setPpr(1);
+       } else if (gravidade == 2) {
+           panelas.setPpr(0.80);
+       } else {
+           panelas.setPpr(0.70);
+       }
+   }
 }

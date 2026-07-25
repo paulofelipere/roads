@@ -22,6 +22,9 @@ public class Remendos {
     @Column(name = "gravidade")
     private int gravidade;
 
+    @Column(name = "ppr")
+    private double ppr;
+
     @Column(name ="resultadoiggeremendos")
     private int resultadoIggeRemendos;
 
@@ -90,5 +93,13 @@ public class Remendos {
 
     public Long getId() {
         return id;
+    }
+
+    public double getPpr() {
+        return ppr;
+    }
+
+    public void setPpr(double ppr) {
+        this.ppr = ppr;
     }
 }

@@ -41,6 +41,8 @@ public class TrincasService {
         return trincas;
     }
 
+    public void tipoTrincas(Trincas trincas) {} // função para adcionar o tipo da trinca
+
     public void calculoTrincas(Trincas trincas) {
         int quantidade = trincas.getQuantidadeTrincas();
 

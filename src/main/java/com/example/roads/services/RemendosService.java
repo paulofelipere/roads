@@ -1,6 +1,6 @@
 package com.example.roads.services;
 
-import com.example.roads.entities.Panelas;
+
 import com.example.roads.entities.Remendos;
 import com.example.roads.repositories.RemendosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,6 +67,15 @@ public class RemendosService {
             System.out.println("Frequencia baixa");
         }
     }
-
+    public void pesoPpr(Remendos remendos) {
+        int gravidade =  remendos.getGravidade();
+        if (gravidade == 3) {
+            remendos.setPpr(1);
+        } else if (gravidade == 2) {
+            remendos.setPpr(0.80);
+        } else {
+            remendos.setPpr(0.70);
+        }
+    }
     }
 
