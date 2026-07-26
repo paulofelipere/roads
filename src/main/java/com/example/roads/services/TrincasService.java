@@ -9,11 +9,18 @@ import java.util.List;
 
 @Service
 public class TrincasService {
+    private static final double LIMIAR_ALTA = 0.50;
+    private static final double LIMIAR_MEDIA = 0.10;
+    private static final double FATOR_ALTO = 0.65;
+    private static final double FATOR_MEDIO = 0.45;
+    private static final double FATOR_BAIXO = 0.30;
+
     @Autowired
     TrincasRepository trincasRepository;
 
     public TrincasService() {
     }
+
 
     public List<Trincas> getTrincas() {
         return trincasRepository.findAll();
@@ -21,8 +28,7 @@ public class TrincasService {
 
     public Trincas saveTrincas(Trincas trincas) {
         calculoTrincas(trincas);
-        trincasRepository.save(trincas);
-        return trincas;
+        return trincasRepository.save(trincas);
     }
 
     public Trincas findTrincasById(Long id) {
@@ -31,21 +37,17 @@ public class TrincasService {
 
     public Trincas updateTrincas(Trincas trincas) {
         calculoTrincas(trincas);
-        trincasRepository.save(trincas);
-        return trincas;
+        return trincasRepository.save(trincas);
     }
 
-
-    public void tipoTrincas(Trincas trincas) {} // função para adcionar o tipo da trinca
-
-    /*Olhar essa função
     public void calculoTrincas(Trincas trincas) {
-        int quantidade = trincas.getQuantidadeTrincas();
+        int quantidadeTrincas = trincas.getQuantidadeTrincas();
 
-        if (quantidade >= 5) {
+        // Classificação por faixa conforme a DNIT 008/2003.
+        if (quantidadeTrincas >= LIMIAR_ALTA) {
             trincas.setCodigoTrinca("A");
             trincas.setGravidadeTrincas(3);
-        } else if (quantidade > 2 && quantidade < 5) {
+        } else if (quantidadeTrincas > LIMIAR_MEDIA && quantidadeTrincas < LIMIAR_ALTA) {
             trincas.setCodigoTrinca("M");
             trincas.setGravidadeTrincas(2);
         } else {
@@ -53,14 +55,29 @@ public class TrincasService {
             trincas.setGravidadeTrincas(1);
         }
 
+        pesoFt(trincas);
+        calculoPt(trincas);
+    }
 
+    public void pesoFt(Trincas trincas) {
+        String codigo = trincas.getCodigoTrinca();
+        if ("A".equals(codigo)) {
+            trincas.setFt(FATOR_ALTO);
+        } else if ("M".equals(codigo)) {
+            trincas.setFt(FATOR_MEDIO);
+        } else {
+            trincas.setFt(FATOR_BAIXO);
+        }
+    }
+
+    private void calculoPt(Trincas trincas) {
         int gravidade = trincas.getGravidadeTrincas();
         if (gravidade == 3) {
-            trincas.setPt(0.65);
+            trincas.setPt(FATOR_ALTO);
         } else if (gravidade == 2) {
-            trincas.setPt(0.45);
+            trincas.setPt(FATOR_MEDIO);
         } else {
-            trincas.setPt(0.30);
+            trincas.setPt(FATOR_BAIXO);
         }
-    }*/
+    }
 }

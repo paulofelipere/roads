@@ -9,6 +9,11 @@ import java.util.List;
 
 @Service
 public class PanelasService {
+    private static final double PESO_ALTO = 1.0;
+    private static final double PESO_MEDIO = 0.80;
+    private static final double PESO_BAIXO = 0.70;
+    private static final int QUANTIDADE_ALTA = 5;
+    private static final int QUANTIDADE_MEDIA = 2;
 
     @Autowired PanelasRepository panelasRepository;
 
@@ -44,10 +49,10 @@ public class PanelasService {
     public void frequenciaPanelas(Panelas panelas) {
         int quantidadeKm = panelas.getQuantidade();
 
-        if (quantidadeKm >= 5) {
+        if (quantidadeKm >= QUANTIDADE_ALTA) {
             panelas.setCodigo("A");
             panelas.setGravidade(3);
-        } else if (quantidadeKm > 2 && quantidadeKm < 5) {
+        } else if (quantidadeKm > QUANTIDADE_MEDIA && quantidadeKm < QUANTIDADE_ALTA) {
             panelas.setCodigo("M");
             panelas.setGravidade(2);
         } else {
@@ -55,17 +60,30 @@ public class PanelasService {
             panelas.setGravidade(1);
         }
 
+        pesoFpr(panelas);
         pesoPpr(panelas);
+    }
+
+    public void pesoFpr(Panelas panelas) {
+        int quantidadeKm = panelas.getQuantidade();
+        if (quantidadeKm >= QUANTIDADE_ALTA) {
+            panelas.setFpr(PESO_ALTO);
+        } else if (quantidadeKm > QUANTIDADE_MEDIA && quantidadeKm < QUANTIDADE_ALTA) {
+            panelas.setFpr(PESO_MEDIO);
+        } else {
+            panelas.setFpr(PESO_BAIXO);
+        }
     }
 
     public void pesoPpr(Panelas panelas) {
         int gravidade = panelas.getGravidade();
         if (gravidade == 3) {
-            panelas.setPpr(1);
+            panelas.setPpr(PESO_ALTO);
         } else if (gravidade == 2) {
-            panelas.setPpr(0.80);
+            panelas.setPpr(PESO_MEDIO);
         } else {
-            panelas.setPpr(0.70);
+            panelas.setPpr(PESO_BAIXO);
         }
     }
+
 }

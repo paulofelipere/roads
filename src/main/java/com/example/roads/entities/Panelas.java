@@ -22,6 +22,9 @@ public class Panelas {
     @Column(name = "ppr")
     private double ppr;
 
+    @Column(name = "fpr")
+    private double fpr;
+
     @ManyToOne
     @JoinColumn(name = "seguimento_id") // Aponta para o ID do CadastroSeguimento
     private CadastroSeguimento seguimento;
@@ -40,6 +43,8 @@ public class Panelas {
     public void setQuantidade(int quantidade) { this.quantidade = quantidade; }
     public double getPpr() { return ppr; }
     public void setPpr(double ppr) { this.ppr = ppr; }
+    public double getFpr() { return fpr; }
+    public void setFpr(double fpr) { this.fpr = fpr; }
     public CadastroSeguimento getSeguimento() { return seguimento; }
     public void setSeguimento(CadastroSeguimento seguimento) { this.seguimento = seguimento; }
 
