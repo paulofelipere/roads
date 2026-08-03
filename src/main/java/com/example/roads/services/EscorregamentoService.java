@@ -1,7 +1,6 @@
 package com.example.roads.services;
 
 import com.example.roads.entities.Escorregamento;
-import com.example.roads.entities.Exsudacao;
 import com.example.roads.repositories.EscorregamentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

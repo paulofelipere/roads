@@ -10,7 +10,68 @@ public class Desgaste {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 100)
-    private String descricao;
+    @Column(name = "codigoDesgaste")
+    private String codigoDesgaste;
 
+    @Column(name = "porcetagemDesgasteKm")
+    private double porcetagemDesgasteKm;
+
+    @Column(name = "gravidadeDesgaste")
+    private int gravidadeDesgaste;
+
+    @Column(name = "foap")
+    private double foap;
+
+    @Column(name = "poap")
+    private double poap;
+
+    public Desgaste() {}
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getCodigoDesgaste() {
+        return codigoDesgaste;
+    }
+
+    public void setCodigoDesgaste(String codigoDesgaste) {
+        this.codigoDesgaste = codigoDesgaste;
+    }
+
+    public double getPorcetagemDesgasteKm() {
+        return porcetagemDesgasteKm;
+    }
+
+    public void setPorcetagemDesgasteKm(double porcetagemDesgasteKm) {
+        this.porcetagemDesgasteKm = porcetagemDesgasteKm;
+    }
+
+    public int getGravidadeDesgaste() {
+        return gravidadeDesgaste;
+    }
+
+    public void setGravidadeDesgaste(int gravidadeDesgaste) {
+        this.gravidadeDesgaste = gravidadeDesgaste;
+    }
+
+    public double getFoap() {
+        return foap;
+    }
+
+    public void setFoap(double foap) {
+        this.foap = foap;
+    }
+
+    public double getPoap() {
+        return poap;
+    }
+
+    public void setPoap(double poap) {
+        this.poap = poap;
+    }
 }

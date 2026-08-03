@@ -1,7 +1,6 @@
 package com.example.roads.services;
 
 import com.example.roads.entities.Ondulacoes;
-import com.example.roads.entities.Trincas;
 import com.example.roads.repositories.OndulacoesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
