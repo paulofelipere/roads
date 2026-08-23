@@ -24,6 +24,10 @@ public class Exsudacao {
     @Column(name = "poap")
     private double poap;
 
+    @ManyToOne
+    @JoinColumn(name = "seguimento_id")
+    private CadastroSeguimento seguimento;
+
     public Exsudacao() {}
 
     public long getId() {
@@ -76,5 +80,13 @@ public class Exsudacao {
 
     public void setPoap(double poap) {
         this.poap = poap;
+    }
+
+    public CadastroSeguimento getSeguimento() {
+        return seguimento;
+    }
+
+    public void setSeguimento(CadastroSeguimento seguimento) {
+        this.seguimento = seguimento;
     }
 }

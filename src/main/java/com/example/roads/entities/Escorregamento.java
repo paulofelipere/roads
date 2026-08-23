@@ -25,6 +25,10 @@ public class Escorregamento {
     @Column(name = "poap")
     private double poap;
 
+    @ManyToOne
+    @JoinColumn(name = "seguimento_id")
+    private CadastroSeguimento seguimento;
+
     public Escorregamento() {}
 
     public long getId() {
@@ -73,5 +77,13 @@ public class Escorregamento {
 
     public void setPoap(double poap) {
         this.poap = poap;
+    }
+
+    public CadastroSeguimento getSeguimento() {
+        return seguimento;
+    }
+
+    public void setSeguimento(CadastroSeguimento seguimento) {
+        this.seguimento = seguimento;
     }
 }

@@ -28,6 +28,10 @@ public class Afundamento {
     @Column(name = "poap")
     private double poap;
 
+    @ManyToOne
+    @JoinColumn(name = "seguimento_id")
+    private CadastroSeguimento seguimento;
+
     public Afundamento() {}
 
     public Long getId() {
@@ -84,5 +88,13 @@ public class Afundamento {
 
     public void setPoap(double poap) {
         this.poap = poap;
+    }
+
+    public CadastroSeguimento getSeguimento() {
+        return seguimento;
+    }
+
+    public void setSeguimento(CadastroSeguimento seguimento) {
+        this.seguimento = seguimento;
     }
 }

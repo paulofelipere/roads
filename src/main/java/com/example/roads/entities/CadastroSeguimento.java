@@ -50,6 +50,21 @@ public class CadastroSeguimento {
     @OneToMany(mappedBy = "seguimento", cascade = CascadeType.ALL)
     private List<Deformacoes> deformacoes = new ArrayList<>();
 
+    @OneToMany(mappedBy = "seguimento", cascade = CascadeType.ALL)
+    private List<Ondulacoes> ondulacoes = new ArrayList<>();
+
+    @OneToMany(mappedBy = "seguimento", cascade = CascadeType.ALL)
+    private List<Afundamento> afundamentos = new ArrayList<>();
+
+    @OneToMany(mappedBy = "seguimento", cascade = CascadeType.ALL)
+    private List<Exsudacao> exsudacoes = new ArrayList<>();
+
+    @OneToMany(mappedBy = "seguimento", cascade = CascadeType.ALL)
+    private List<Desgaste> desgastes = new ArrayList<>();
+
+    @OneToMany(mappedBy = "seguimento", cascade = CascadeType.ALL)
+    private List<Escorregamento> escorregamentos = new ArrayList<>();
+
     public CadastroSeguimento() {
     }
 
@@ -83,4 +98,14 @@ public class CadastroSeguimento {
     public void setPanelas(List<Panelas> panelas) { this.panelas = panelas; }
     public List<Deformacoes> getDeformacoes() { return deformacoes; }
     public void setDeformacoes(List<Deformacoes> deformacoes) { this.deformacoes = deformacoes; }
+    public List<Ondulacoes> getOndulacoes() { return ondulacoes; }
+    public void setOndulacoes(List<Ondulacoes> ondulacoes) { this.ondulacoes = ondulacoes; }
+    public List<Afundamento> getAfundamentos() { return afundamentos; }
+    public void setAfundamentos(List<Afundamento> afundamentos) { this.afundamentos = afundamentos; }
+    public List<Exsudacao> getExsudacoes() { return exsudacoes; }
+    public void setExsudacoes(List<Exsudacao> exsudacoes) { this.exsudacoes = exsudacoes; }
+    public List<Desgaste> getDesgastes() { return desgastes; }
+    public void setDesgastes(List<Desgaste> desgastes) { this.desgastes = desgastes; }
+    public List<Escorregamento> getEscorregamentos() { return escorregamentos; }
+    public void setEscorregamentos(List<Escorregamento> escorregamentos) { this.escorregamentos = escorregamentos; }
 }

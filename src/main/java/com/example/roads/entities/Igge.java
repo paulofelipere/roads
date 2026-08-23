@@ -16,6 +16,11 @@ public class Igge {
     @Column(name = "conceito")
     private String conceito;
 
+    @OneToOne
+    @JoinColumn(name = "seguimento_id")
+    private CadastroSeguimento seguimento;
+
+
     public Igge(){
 
     }
@@ -23,6 +28,14 @@ public class Igge {
     public Igge(double valorIgge, String conceito) {
         this.valorIgge = valorIgge;
         this.conceito = conceito;
+    }
+
+    public CadastroSeguimento getSeguimento() {
+        return seguimento;
+    }
+
+    public void setSeguimento(CadastroSeguimento seguimento) {
+        this.seguimento = seguimento;
     }
 
     public Long getId() {
