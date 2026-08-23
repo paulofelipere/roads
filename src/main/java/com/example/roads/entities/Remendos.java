@@ -22,6 +22,9 @@ public class Remendos {
     @Column(name = "gravidade")
     private int gravidade;
 
+    @Column(name = "fpr")
+    private double fpr;
+
     @Column(name = "ppr")
     private double ppr;
 
@@ -93,6 +96,14 @@ public class Remendos {
 
     public Long getId() {
         return id;
+    }
+
+    public double getFpr() {
+        return fpr;
+    }
+
+    public void setFpr(double fpr) {
+        this.fpr = fpr;
     }
 
     public double getPpr() {

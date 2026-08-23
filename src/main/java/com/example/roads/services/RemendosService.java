@@ -51,7 +51,19 @@ public class RemendosService {
             remendos.setGravidade(1);
 
         }
+        pesoFpr(remendos);
         pesoPpr(remendos);
+    }
+
+    public void pesoFpr(Remendos remendos) {
+        int quantidade = remendos.getQuantidade();
+        if (quantidade >= 5) {
+            remendos.setFpr(1);
+        } else if (quantidade > 2 && quantidade < 5) {
+            remendos.setFpr(0.80);
+        } else {
+            remendos.setFpr(0.70);
+        }
     }
 
     public void pesoPpr(Remendos remendos) {
