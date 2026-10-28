@@ -64,6 +64,42 @@ public class ICPFService {
         return new IcpfTabela(idRodovia, numRodovia, montarLinhas(seguimentos));
     }
 
+    @Transactional(readOnly = true)
+    public double calcularIcpfMedio() {
+        return calcularMediaIcpf(cadastroSeguimentoRepository.findAll());
+    }
+
+    @Transactional(readOnly = true)
+    public double calcularIcpfMedioPorRodovia(Long rodoviaId) {
+        return calcularMediaIcpf(
+                cadastroSeguimentoRepository.findByRodovia_IdOrderByNumSeguimentoAsc(rodoviaId));
+    }
+
+    public double calcularMediaIcpf(List<CadastroSeguimento> seguimentos) {
+        if (seguimentos == null || seguimentos.isEmpty()) {
+            return 0.0;
+        }
+
+        double soma = 0.0;
+        int quantidade = 0;
+        for (CadastroSeguimento seguimento : seguimentos) {
+            if (seguimento != null) {
+                soma += calcularValorIcpf(seguimento);
+                quantidade++;
+            }
+        }
+
+        if (quantidade == 0) {
+            return 0.0;
+        }
+
+        return Math.round((soma / quantidade) * 100.0) / 100.0;
+    }
+
+    public double calcularValorIcpf(CadastroSeguimento seguimento) {
+        return montarLinha(seguimento).getIcpf();
+    }
+
     private List<IcpfTabelaLinha> montarLinhas(List<CadastroSeguimento> seguimentos) {
         List<IcpfTabelaLinha> linhas = new ArrayList<>();
         for (CadastroSeguimento seguimento : seguimentos) {

@@ -25,6 +25,16 @@ public class IcpfController {
         return icpfService.gerarTabelaPorRodovia(rodoviaId);
     }
 
+    @GetMapping("calcularIcpfMedio")
+    public double calcularIcpfMedio() {
+        return icpfService.calcularIcpfMedio();
+    }
+
+    @GetMapping("calcularIcpfMedio/rodovia/{rodoviaId}")
+    public double calcularIcpfMedioPorRodovia(@PathVariable Long rodoviaId) {
+        return icpfService.calcularIcpfMedioPorRodovia(rodoviaId);
+    }
+
     @GetMapping("calcularIcpf/{seguimentoId}")
     public IcpfTabelaLinha calcularIcpf(@PathVariable Long seguimentoId) {
         return icpfService.calcularIcpf(seguimentoId);

@@ -19,6 +19,16 @@ public class IggeController {
         return iggeService.calcularIgge(seguimentoId);
     }
 
+    @GetMapping("mediaIgge")
+    public double calcularIggeMedio() {
+        return iggeService.calcularIggeMedio();
+    }
+
+    @GetMapping("mediaIgge/rodovia/{rodoviaId}")
+    public double calcularIggeMedioPorRodovia(@PathVariable Long rodoviaId) {
+        return iggeService.calcularIggeMedioPorRodovia(rodoviaId);
+    }
+
     @PostMapping("salvarIgge/{seguimentoId}")
     public IggeResultado calcularESalvarIgge(@PathVariable Long seguimentoId) {
         return iggeService.calcularESalvarIgge(seguimentoId);

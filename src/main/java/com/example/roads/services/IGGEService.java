@@ -70,6 +70,38 @@ public class IGGEService {
         return calcularResultado(buscarSeguimento(seguimentoId));
     }
 
+    @Transactional(readOnly = true)
+    public double calcularIggeMedio() {
+        return calcularMediaIgge(cadastroSeguimentoRepository.findAll());
+    }
+
+    @Transactional(readOnly = true)
+    public double calcularIggeMedioPorRodovia(Long rodoviaId) {
+        return calcularMediaIgge(
+                cadastroSeguimentoRepository.findByRodovia_IdOrderByNumSeguimentoAsc(rodoviaId));
+    }
+
+    public double calcularMediaIgge(List<CadastroSeguimento> seguimentos) {
+        if (seguimentos == null || seguimentos.isEmpty()) {
+            return 0.0;
+        }
+
+        double soma = 0.0;
+        int quantidade = 0;
+        for (CadastroSeguimento seguimento : seguimentos) {
+            if (seguimento != null) {
+                soma += calcularValorIgge(seguimento);
+                quantidade++;
+            }
+        }
+
+        if (quantidade == 0) {
+            return 0.0;
+        }
+
+        return arredondar(soma / quantidade);
+    }
+
     public IggeResultado calcularResultado(CadastroSeguimento seguimento) {
         double ft = somarPorcentagemTrincas(seguimento);
         double foap = somarPorcentagemDeformacoes(seguimento);
